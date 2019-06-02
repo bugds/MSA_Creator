@@ -6,7 +6,7 @@ def fileParser(path):
     line = file.readline()
     intermedList = []
     while line:
-        intermedList.append(line)
+        intermedList.append(line.replace(' ', '_')[:-1])
         line = file.readline()
     file.close()
     return intermedList
@@ -17,29 +17,28 @@ def fastaParser(path):
     speciesDict = dict()
     while line:
         if line[0] == '>':
-            analyzedSpecies = line.split('/')[0][1:] \
-                + ' ' \
-                + line.split(' ')[1][:-1]
-            speciesDict[analyzedSpecies] = ''
+            analyzedProtein = line[1:-1]
+            speciesDict[analyzedProtein] = ''
         else:
-            speciesDict[analyzedSpecies] += line
+            speciesDict[analyzedProtein] += line
         line = file.readline()
     file.close()
     return speciesDict
 
 def fastaGenerator(speciesList, speciesDict):
-    file = open('./StandOut.fasta', 'w')
+    file = open('StandOut.fasta', 'w')
     for species in speciesList:
-        try:
-            file.write('>' + species + speciesDict[species[:-1]])
-        except KeyError:
-            pass
+        for protein in speciesDict.keys():
+            if species in protein:
+                file.write('>' + protein + '\n' + speciesDict[protein])
     file.close()
 
 def main():
     speciesList = []
-    for fileName in os.listdir('./Species'):
-        speciesList.extend(fileParser('./Species/' + fileName))
-    fastaGenerator(speciesList, fastaParser('./alignment.fasta'))
+    for fileName in os.listdir('Species'):
+        speciesList.extend(fileParser('Species/' + fileName))
+    fastaGenerator(speciesList, fastaParser('MSA.txt'))
     
 main()
+
+# !!! Write down species in out.fasta, but not in Species folder !!!
