@@ -2,7 +2,7 @@ import os
 import sys
 
 data = {}
-reference = ''
+reference = 'MeCP2_1'
 
 class BlastResult:
 	def __init__(self, f, e):
@@ -13,7 +13,7 @@ def main():
 	global data
 	if len(sys.argv) == 1:
 		print("Please, write the directory with BLAST results " + \
-	                      "(fasta and csv) as an argument.")
+			      "(fasta and csv) as an argument.")
 		print("Restart manually")
 	else:
 		for fileName in os.listdir(sys.argv[1]):
@@ -23,24 +23,24 @@ def main():
 			if firstLine[0] == '>':
 				print("Processing " + fileName + " and " +\
 					fileName.split('.')[0] + ".csv")
-				parser(os.path.join(sys.argv[1], fileName))
-				if 'y' in input("Is " + fileName +\
-				" - the reference? "):
-					reference = fileName.split('.')[0]
-		print(reference)
+				parser(fileName)
+				#if 'y' in input("Is " + fileName +\
+				#" - the reference? "):
+				#	reference = fileName.split('.')[0]
 		dictToFilter = data[reference]
-		for filter in data.keys():
-			if filter != reference:
-	                        dictToFilter = comparator(dictToFilter,\
-					filter)
+		for p in data.keys():
+			if p != reference:
+				dictToFilter = comparator(dictToFilter,\
+					data[p])
 		return dictToFilter
 
-def parser(path):
+def parser(fileName):
 	global data
-	protein = path.split('/')[-1].split('.')[0]
+	protein = fileName.split('.')[0]
 	data[protein] = {}
-	fastaFile = open(path, 'r')
-	csvFile = open(path.split('.')[0] + '.csv', 'r')
+	fastaFile = open(os.path.join(sys.argv[1], fileName), 'r')
+	csvFile = open(os.path.join(sys.argv[1], fileName)\
+		       .replace('.txt', '.csv'), 'r')
 	fastaLine = fastaFile.readline()
 	csvLine = ','
 	while fastaLine:
@@ -73,10 +73,28 @@ def parser(path):
 	fastaFile.close()
 	csvFile.close()
 
-def comparator(dictToFilter, filter):
-	for species in dictToFilter.keys():
-		minInDictToFilter = min(float(dictToFilter[species].items()))
-		minInFilter = min(float(dictToFilter[species].items()))
-		if minInDictToFilter > minInFilter:
-			dictToFilter.pop(species)
-main()
+def comparator(dictToFilter, dictFilter):
+	for species in list(dictToFilter):
+                try:
+                        minDictToFilter = min([float(item[1].Evalue) for item\
+					in dictToFilter[species].items()])
+                        minDictFilter = min([float(item[1].Evalue) for item\
+					in dictFilter[species].items()])
+                        if minDictToFilter > minDictFilter:
+                                dictToFilter.pop(species)
+                except KeyError:
+                        print('y')
+                        pass
+	return dictToFilter
+
+for key, item in main().items():
+        minimum = 10
+        AN = ''
+        fasta = ''
+        for i in item.items():
+                if minimum > float(i[1].Evalue):
+                        minimum = float(i[1].Evalue)
+                        AN = i[0]
+                        fasta = i[1].fasta
+        print('>' + key + ':_(' + AN + ')')
+        print(fasta)
