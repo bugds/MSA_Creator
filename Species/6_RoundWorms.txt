@@ -1,0 +1,164 @@
+Caenorhabditis briggsae
+Caenorhabditis elegans
+Brugia malayi
+Trichinella spiralis
+Pristionchus pacificus
+Caenorhabditis japonica
+Caenorhabditis remanei
+Caenorhabditis brenneri
+Meloidogyne hapla
+Meloidogyne incognita
+Ancylostoma caninum
+Ancylostoma duodenale
+Ascaris suum
+Heterorhabditis bacteriophora
+Dictyocaulus viviparus
+Oesophagostomum dentatum
+Necator americanus
+Heterodera glycines
+Acanthocheilonema viteae
+Wuchereria bancrofti
+Onchocerca volvulus
+Loa loa
+Steinernema carpocapsae
+Caenorhabditis angaria
+Strongyloides ratti
+Anisakis simplex
+Toxocara canis
+Enterobius vermicularis
+Strongylus vulgaris
+Setaria digitata
+Angiostrongylus costaricensis
+Dirofilaria immitis
+Teladorsagia circumcincta
+Dracunculus medinensis
+Meloidogyne arenaria
+Meloidogyne javanica
+Ancylostoma ceylanicum
+Nippostrongylus brasiliensis
+Rotylenchulus reniformis
+Bursaphelenchus xylophilus
+Trichinella pseudospiralis
+Onchocerca flexuosa
+Strongyloides venezuelensis
+Litomosoides sigmodontis
+Brugia pahangi
+Strongyloides stercoralis
+Trichuris trichiura
+Trichuris suis
+Caenorhabditis sp. 34 TK-2017
+Meloidogyne graminicola
+Thelazia callipaeda
+Panagrellus redivivus
+Haemonchus contortus
+Steinernema feltiae
+Steinernema scapterisci
+Steinernema glaseri
+Steinernema monticolum
+Onchocerca ochengi
+Romanomermis culicivorax
+Elaeophora elaphi
+Angiostrongylus cantonensis
+Trichuris muris
+Globodera pallida
+Meloidogyne floridensis
+Parascaris univalens
+Trichinella nelsoni
+Trichinella nativa
+Trichinella britovi
+Trichinella zimbabwensis
+Trichinella papuae
+Caenorhabditis tropicalis
+Trichinella murrelli
+Oscheius sp. MCB
+Meloidogyne enterolobii
+Strongyloides papillosus
+Parastrongyloides trichosuri
+Rhabditophanes sp. KR3021
+Heligmosomoides polygyrus bakeri
+Brugia timori
+Cylicostephanus goldi
+Gongylonema pulchrum
+Haemonchus placei
+Soboliphyme baturini
+Subanguina moxae
+Trichinella sp. T6
+Trichinella patagoniensis
+Ditylenchus destructor
+Globodera rostochiensis
+Caenorhabditis nigoni
+Globodera ellingtonae
+Oscheius tipulae
+Diploscapter coronatus
+Caenorhabditis latens
+Diploscapter pachys
+Plectus sambesii
+Setaria equina
+Pristionchus exspectatus
+Acrobeloides nanus
+Pristionchus arcanus
+Pristionchus maxplancki
+Pristionchus entomophagus
+Parapristionchus giblindavisi
+Micoletzkya japonica
+Pristionchus japonicus
+Pristionchus mayeri
+Pristionchus fissidentatus
+Rhabditida sp. S2_005_001R2
+Ditylenchus dipsaci
+Caenorhabditis nigoni
+Trichinella sp. T9
+Heligmosomoides polygyrus
+Oscheius sp. TEL-2014
+Trichinella murrelli
+Trichinella nativa
+Parascaris univalens
+Meloidogyne floridensis
+Angiostrongylus cantonensis
+Onchocerca ochengi
+Haemonchus contortus
+Caenorhabditis sp. 21 LS-2015
+Trichuris suis
+Brugia pahangi
+Onchocerca flexuosa
+Trichinella pseudospiralis
+Bursaphelenchus xylophilus
+Nippostrongylus brasiliensis
+Ancylostoma ceylanicum
+Meloidogyne arenaria
+Meloidogyne javanica
+Setaria digitata
+Toxocara canis
+Onchocerca volvulus
+Loa loa
+Wuchereria bancrofti
+Heterodera glycines
+Ascaris suum
+Caenorhabditis remanei
+Meloidogyne incognita
+Trichinella spiralis
+Caenorhabditis elegans
+Caenorhabditis elegans
+Caenorhabditis remanei
+Meloidogyne incognita
+Ascaris suum
+Wuchereria bancrofti
+Toxocara canis
+Meloidogyne arenaria
+Trichinella pseudospiralis
+Trichuris suis
+Caenorhabditis sp. 32 LS-2015
+Onchocerca ochengi
+Oscheius sp. TEL-2014
+Trichinella sp. T8
+Caenorhabditis sp. 31 LS-2015
+Trichinella pseudospiralis
+Caenorhabditis elegans
+Caenorhabditis elegans
+Trichinella pseudospiralis
+Caenorhabditis sp. 26 LS-2015
+Caenorhabditis sp. 38 MB-2015
+Caenorhabditis sp. 39 LS-2015
+Caenorhabditis sp. 40 LS-2015
+Caenorhabditis sp. 28 LS-2018
+Caenorhabditis sp. 29 LS-2018

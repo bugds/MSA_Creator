@@ -1,0 +1,38 @@
+Gekko japonicus
+Paroedura picta
+Anolis carolinensis
+Pogona vitticeps
+Lacerta bilineata
+Podarcis muralis
+Lacerta viridis
+Salvator merianae
+Python bivittatus
+Protobothrops mucrosquamatus
+Protobothrops flavoviridis
+Vipera berus berus
+Crotalus horridus
+Crotalus pyrrhus
+Crotalus viridis viridis
+Pantherophis guttatus
+Thamnophis sirtalis
+Notechis scutatus
+Ophiophagus hannah
+Pseudonaja textilis
+Thermophis baileyi
+Hydrophis cyanocinctus
+Hydrophis hardwickii
+Sphenodon punctatus
+Gopherus agassizii
+Chelonoidis abingdonii
+Platysternon megacephalum
+Cuora amboinensis
+Cuora mccordi
+Chrysemys picta bellii
+Malaclemys terrapin terrapin
+Terrapene mexicana triunguis
+Chelonia mydas
+Pelodiscus sinensis
+Apalone spinifera
+Alligator mississippiensis
+Alligator sinensis
+Crocodylus porosus

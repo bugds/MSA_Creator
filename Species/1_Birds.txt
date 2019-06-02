@@ -1,0 +1,169 @@
+Gallus gallus
+Meleagris gallopavo
+Coturnix japonica
+Eudromia elegans
+Apteryx haastii
+Pterocnemia pennata
+Struthio camelus australis
+Dromaius novaehollandiae
+Casuarius casuarius
+Ciconia boyciana
+Falco peregrinus
+Rhea americana
+Taeniopygia guttata
+Anas platyrhynchos
+Gavia stellata
+Cathartes aura
+Nipponia nippon
+Podiceps cristatus
+Agapornis roseicollis
+Bambusicola thoracicus
+Gallirallus okinawae
+Apteryx owenii
+Phasianus colchicus
+Columba livia
+Chrysolophus pictus
+Melopsittacus undulatus
+Apteryx australis mantelli
+Serinus canaria
+Ficedula albicollis
+Colinus virginianus
+Parus major
+Geospiza fortis
+Junco hyemalis
+Numida meleagris
+Falco cherrug
+Phylloscopus trochilus acredula
+Pseudopodoces humilis
+Amazona vittata
+Eopsaltria australis
+Grus japonensis
+Balearica regulorum gibbericeps
+Zonotrichia albicollis
+Pygoscelis adeliae
+Passer domesticus
+Ara macao
+Pygoscelis antarcticus
+Corvus cornix cornix
+Lyrurus tetrix tetrix
+Anser cygnoides domesticus
+Egretta garzetta
+Tyto alba
+Phoenicopterus ruber ruber
+Phaethon lepturus
+Pelecanus crispus
+Cariama cristata
+Colius striatus
+Eurypyga helias
+Fulmarus glacialis
+Haliaeetus albicilla
+Merops nubicus
+Manacus vitellinus
+Opisthocomus hoazin
+Leptosomus discolor
+Mesitornis unicolor
+Corvus brachyrhynchos
+Chlamydotis undulata undulata
+Acanthisitta chloris
+Aquila chrysaetos canadensis
+Picoides pubescens
+Calypte anna
+Pterocles gutturalis
+Aptenodytes forsteri
+Antrostomus carolinensis
+Charadrius vociferus
+Apaloderma vittatum
+Cuculus canorus
+Phalacrocorax carbo
+Tauraco erythrolophus
+Tinamus guttatus
+Buceros rhinoceros silvestris
+Haliaeetus leucocephalus
+Chaetura pelagica
+Nestor notabilis
+Chlamydotis macqueenii
+Corvus hawaiiensis
+Recurvirostra avosetta
+Calidris pygmaea
+Zosterops lateralis melanops
+Amazona aestiva
+Calidris pugnax
+Sturnus vulgaris
+Lonchura striata domestica
+Callipepla squamata
+Nannopterum brasilianus
+Lepidothrix coronata
+Phylloscopus plumbeitarsus
+Phylloscopus trochiloides viridanus
+Setophaga coronata coronata
+Tympanuchus cupido pinnatus
+Patagioenas fasciata monilis
+Nannopterum harrisi
+Urile pelagicus
+Nannopterum auritus
+Sporophila hypoxantha
+Himantopus himantopus leucocephalus
+Anas zonorhyncha
+Uria lomvia
+Strix occidentalis caurina
+Saxicola maurus maurus
+Anser brachyrhynchus
+Spheniscus mendiculus
+Spheniscus magellanicus
+Spheniscus humboldti
+Limosa lapponica baueri
+Acridotheres javanicus
+Psittacula krameri
+Cyanistes caeruleus
+Empidonax traillii
+Athene cunicularia
+Pygoscelis papua
+Hemignathus virens
+Nothoprocta perdicaria
+Apteryx rowi
+Crypturellus cinnamomeus
+Syrmaticus mikado
+Mixornis gularis
+Erythrura gouldiae
+Hirundo rustica rustica
+Paradisaea rubra
+Diphyllodes magnificus
+Parotia lawesii
+Cicinnurus regius
+Paradisaea raggiana
+Pipra filicauda
+Corapipo altera
+Amazona collaria
+Neopelma chrysocephalum
+Strigops habroptila
+Bubo blakistoni
+Strigops habroptila
+Pygoscelis papua
+Spheniscus humboldti
+Spheniscus magellanicus
+Phylloscopus trochiloides trochiloides
+Calidris pugnax
+Calypte anna
+Aquila chrysaetos canadensis
+Manacus vitellinus
+Anser cygnoides
+Pygoscelis antarcticus
+Corvus cornix cornix
+Ara macao
+Pygoscelis adeliae
+Zonotrichia albicollis
+Colinus virginianus
+Ficedula albicollis
+Columba livia
+Anas platyrhynchos platyrhynchos
+Taeniopygia guttata
+Falco peregrinus
+Gallus gallus
+Coturnix japonica
+Taeniopygia guttata
+Anas platyrhynchos
+Pygoscelis adeliae
+Aquila chrysaetos chrysaetos
+Calypte anna
+Spheniscus magellanicus
+Calypte anna

@@ -1,0 +1,598 @@
+Aedes aegypti
+Aedes albopictus
+Anopheles gambiae str. PEST
+Drosophila melanogaster
+Apis mellifera
+Glossina morsitans morsitans
+Bombyx mori
+Drosophila yakuba
+Drosophila simulans
+Tribolium castaneum
+Drosophila pseudoobscura pseudoobscura
+Drosophila ananassae
+Drosophila erecta
+Drosophila willistoni
+Drosophila grimshawi
+Drosophila mojavensis
+Drosophila virilis
+Drosophila persimilis
+Drosophila sechellia
+Culex quinquefasciatus
+Rhodnius prolixus
+Acyrthosiphon pisum
+Nasonia vitripennis
+Pediculus humanus corporis
+Bemisia tabaci
+Lutzomyia longipalpis
+Nasonia giraulti
+Nasonia longicornis
+Melitaea cinxia
+Diaphorina citri
+Haematobia irritans
+Mayetiola destructor
+Anopheles darlingi
+Anopheles stephensi
+Anopheles funestus
+Drosophila albomicans
+Pogonomyrmex barbatus
+Linepithema humile
+Ceratitis capitata
+Bombus terrestris
+Apis florea
+Myzus persicae
+Atta cephalotes
+Solenopsis invicta
+Nilaparvata lugens
+Camponotus floridanus
+Chironomus riparius
+Harpegnathos saltator
+Bombus impatiens
+Drosophila elegans
+Drosophila ficusphila
+Drosophila kikkawai
+Drosophila takahashii
+Drosophila bipectinata
+Drosophila biarmipes
+Acromyrmex echinatior
+Megachile rotundata
+Drosophila rhopaloa
+Drosophila eugracilis
+Bombyx mandarina
+Philaenus spumarius
+Lucilia sericata
+Hyphantria cunea
+Pieris rapae
+Cochliomyia hominivorax
+Bactrocera dorsalis
+Locusta migratoria
+Heliconius cydno alithea
+Heliconius melpomene melpomene
+Drosophila miranda
+Drosophila americana
+Drosophila novamexicana
+Drosophila hydei
+Heliothis virescens
+Bicyclus anynana
+Spodoptera frugiperda
+Phlebotomus papatasi
+Dendroctonus ponderosae
+Stomoxys calcitrans
+Cimex lectularius
+Oncopeltus fasciatus
+Anopheles arabiensis
+Anopheles quadriannulatus
+Anopheles epiroticus
+Anopheles christyi
+Anopheles merus
+Anopheles melas
+Anopheles maculatus
+Anopheles minimus
+Anopheles culicifacies
+Anopheles farauti
+Anopheles dirus
+Anopheles atroparvus
+Anopheles albimanus
+Plutella xylostella
+Danaus plexippus plexippus
+Zeugodacus cucurbitae
+Priacma serrata
+Manduca sexta
+Lymantria dispar dispar
+Apis cerana
+Anopheles sinensis
+Laodelphax striatella
+Cotesia vestalis
+Melipona quadrifasciata
+Lucilia cuprina
+Copidosoma floridanum
+Microplitis demolitor
+Helicoverpa zea
+Heliconius numata bicoloratus
+Onthophagus taurus
+Leptinotarsa decemlineata
+Sitophilus oryzae
+Agrilus planipennis
+Leptopilina clavipes
+Periplaneta americana
+Pogonus chalceus
+Chilo suppressalis
+Folsomia candida
+Orchesella cincta
+Blattella germanica
+Drosophila montana
+Teleopsis dalmanni
+Helicoverpa armigera
+Sarcophaga bullata
+Homalodisca vitripennis
+Ctenocephalides felis
+Papilio xuthus
+Pachypsylla venusta
+Anoplophora glabripennis
+Athalia rosae
+Halyomorpha halys
+Trichogramma pretiosum
+Cephus cinctus
+Papilio machaon
+Scaptomyza flava
+Spodoptera litura
+Musca domestica
+Lasius niger
+Machilis hrabei
+Ephemera danica
+Orussus abietinus
+Belgica antarctica
+Frankliniella occidentalis
+Apis dorsata
+Mengenilla moldrzyki
+Glossina palpalis gambiensis
+Glossina fuscipes fuscipes
+Lasioglossum albipes
+Agrotis ipsilon
+Bactrocera tryoni
+Heliconius timareta timareta
+Glossina brevipalpis
+Calliphora vicina
+Megaselia scalaris
+Cataglyphis hispanica
+Glossina pallidipes
+Liriomyza trifolii
+Polistes canadensis
+Glossina austeni
+Drosophila serrata
+Anopheles cracens
+Anopheles farauti No. 4
+Ladona fulva
+Bactrocera oleae
+Anopheles nili
+Pararge aegeria
+Leptopilina boulardi
+Formica exsecta
+Gerris buenoi
+Zootermopsis nevadensis
+Catajapyx aquilonaris
+Limnephilus lunatus
+Aphis gossypii
+Diabrotica virgifera virgifera
+Trichoplusia ni
+Drosophila suzukii
+Xenocatantops brachycerus
+Schizaphis graminum
+Cydia pomonella
+Ceratosolen solmsi marchali
+Ostrinia furnacalis
+Diuraphis noxia
+Protaetia brevitarsis
+Papilio polytes
+Heliconius pachinus
+Heliconius hecale felix
+Piezodorus guildinii
+Chironomus tentans
+Fopius arisanus
+Heliconius ismenius
+Dactylopius coccus
+Papilio glaucus
+Bombyx huttoni
+Vollenhovia emeryi
+Phormia regina
+Wasmannia auropunctata
+Anopheles punctulatus
+Anopheles koliensis
+Monomorium pharaonis
+Hypothenemus hampei
+Coboldia fuscipes
+Ephydra gracilis
+Trupanea jonesi
+Chaoborus trivitattus
+Mochlonyx cinctipes
+Condylostylus patibulatus
+Hermetia illucens
+Clogmia albipunctata
+Cirrula hians
+Eutreta diana
+Eristalis dimidiata
+Megaselia abdita
+Holcocephala fusca
+Sphyracephala brevicornis
+Tephritis californica
+Tipula oleracea
+Drosophila busckii
+Phortica variegata
+Trichoceridae sp. BV-2014
+Scaptodrosophila lebanonensis
+Themira minor
+Asbolus verrucosus
+Amyelois transitella
+Neodiprion lecontei
+Operophtera brumata
+Habropoda laboriosa
+Dufourea novaeangliae
+Lerema accius
+Sarcophagidae sp. BV-2014
+Plodia interpunctella
+Dinoponera quadriceps
+Nasutitermes exitiosus
+Nicrophorus vespilloides
+Diachasma alloeum
+Anopheles coluzzii
+Oryctes borbonicus
+Galleria mellonella
+Polistes dominula
+Heliconius ethilla aerotome
+Heliconius elevatus bari
+Heliconius pardalinus sergestus
+Bactrocera latifrons
+Phoebis sennae
+Atta colombica
+Cyphomyrmex costatus
+Trachymyrmex cornetzi
+Trachymyrmex septentrionalis
+Maconellicoccus hirsutus
+Trionymus perrisii
+Ferrisia virgata
+Paracoccus marginatus
+Pseudococcus longispinus
+Trachymyrmex zeteki
+Calycopis cecrops
+Eufriesea mexicana
+Ceratina calcarata
+Drosophila arizonae
+Drosophila navojoa
+Cimex hemipterus
+Amphinemura sulcicollis
+Baetis rhodani
+Isoperla grammatica
+Rhagoletis zephyria
+Trabutina mannipara
+Zaprionus indianus
+Clunio marinus
+Aethina tumida
+Proctacanthus coquilletti
+Pseudomyrmex gracilis
+Timema cristinae
+Calopteryx splendens
+Heliconius heurippa
+Laparus doris doris
+Neruda aoede
+Heliconius hecuba flava
+Heliconius hierax
+Heliconius wallacei
+Heliconius xanthocles
+Macrocentrus cingulum
+Mamestra configurata
+Ooceraea biroi
+Euglossa dilemma
+Drosophila obscura
+Drosophila nasuta
+Dryococelus australis
+Calephelis nemesis
+Calephelis virginiensis
+Trichomalopsis sarcophagae
+Laupala kohalensis
+Leptidea sinapis
+Holacanthella duospinosa
+Clitarchus hookeri
+Drosophila subobscura
+Melanaphis sacchari
+Lepidotrigona ventralis hoosana
+Anopheles aquasalis
+Cryptotermes secundus
+Ceratina australensis
+Hexapoda sp.
+Vanessa tameamea
+Culicoides sonorensis
+Sericostoma sp. HW-2014
+Medauroidea extradentata
+Paykullia maculata
+Temnothorax curvispinosus
+Papilio memnon
+Aleochara bilineata
+Goniozus legneri
+Aphaenogaster rudis
+Aphaenogaster miamiana
+Aphaenogaster floridana
+Aphaenogaster picea
+Aphaenogaster ashmeadi
+Aphaenogaster fulva
+Sipha flava
+Lednia tumana
+Cecidostiba fungosa
+Cecidostiba semifascia
+Eupelmus annulatus
+Ormyrus nitidulus
+Ormyrus pomaceus
+Synergus umbraculus
+Synergus japonicus
+Torymus geranii
+Eupelmus urozonus
+Megastigmus dorsalis
+Megastigmus stigmatizans
+Drosophila athabasca
+Glossosoma conforme
+Harmonia axyridis
+Coccinella septempunctata
+Hyposmocoma kahamanoa
+Solenopsis fugax
+Euschistus heros
+Megathymus ursus violae
+Rhopalosiphum maidis
+Nomia melanderi
+Torymus auratus
+Eurytoma brunniventris
+Eurytoma adleriae
+Andricus inflator
+Andricus grossulariae
+Andricus curvator
+Andricus quercusramuli
+Neuroterus quercusbaccarum
+Pseudoneuroterus saliens
+Drosophila guanche
+Diptera sp. S2_005_002R2
+Sinella curviseta
+Drosophila melanica
+Drosophila robusta
+Drosophila micromelanica
+Drosophila lacertosa
+Drosophila nigromelanica
+Osmia bicornis bicornis
+Cataglyphis niger
+Drosophila innubila
+Drosophila nigromelanica
+Drosophila lacertosa
+Drosophila micromelanica
+Drosophila robusta
+Drosophila melanica
+Harmonia axyridis
+Aphaenogaster rudis
+Papilio memnon
+Leptidea sinapis
+Ooceraea biroi
+Heliconius heurippa
+Laparus doris
+Timema cristinae
+Maconellicoccus hirsutus
+Heliconius pardalinus sergestus
+Heliconius elevatus
+Heliconius ethilla
+Galleria mellonella
+Anopheles coluzzii
+Plodia interpunctella
+Scaptodrosophila lebanonensis
+Drosophila busckii
+Monomorium pharaonis
+Phormia regina
+Heliconius ismenius metaphorus
+Heliconius pachinus
+Heliconius hecale
+Diuraphis noxia
+Drosophila suzukii
+Trichoplusia ni
+Bactrocera oleae
+Heliconius timareta ssp. JD-2011
+Musca domestica
+Papilio xuthus
+Teleopsis dalmanni
+Blattella germanica
+Chilo suppressalis
+Heliconius numata silvana
+Lucilia cuprina
+Cotesia vestalis
+Anopheles sinensis
+Apis cerana cerana
+Plutella xylostella
+Anopheles farauti
+Anopheles maculatus
+Cimex lectularius
+Dendroctonus ponderosae
+Spodoptera frugiperda
+Drosophila hydei
+Drosophila miranda
+Drosophila americana
+Heliconius melpomene aglaope
+Heliconius cydno chioneus
+Drosophila biarmipes
+Drosophila bipectinata
+Drosophila takahashii
+Harpegnathos saltator
+Camponotus floridanus
+Drosophila albomicans
+Anopheles funestus
+Anopheles stephensi
+Mayetiola destructor
+Bemisia tabaci
+Drosophila persimilis
+Drosophila sechellia
+Drosophila virilis
+Drosophila erecta
+Drosophila ananassae
+Drosophila pseudoobscura
+Drosophila simulans
+Bombyx mori
+Glossina morsitans
+Drosophila melanogaster
+Apis mellifera
+Anopheles gambiae
+Aedes albopictus
+Aedes aegypti
+Aedes aegypti
+Aedes albopictus
+Anopheles gambiae
+Drosophila melanogaster
+Apis mellifera mellifera
+Bombyx mori
+Drosophila simulans
+Drosophila pseudoobscura pseudoobscura
+Drosophila virilis
+Anopheles stephensi
+Heliconius cydno alithea
+Heliconius melpomene malleti
+Drosophila miranda
+Spodoptera frugiperda
+Apis cerana japonica
+Heliconius numata tarapotensis
+Heliconius timareta timareta
+Diuraphis noxia
+Heliconius hecale
+Monomorium pharaonis
+Galleria mellonella
+Heliconius ethilla
+Heliconius elevatus
+Heliconius pardalinus sergestus
+Timema cristinae
+Laparus doris delila
+Harmonia axyridis
+Harmonia axyridis
+Heliconius pardalinus sergestus
+Heliconius elevatus bari
+Heliconius ethilla
+Heliconius hecale
+Heliconius timareta ssp. NG-2008
+Heliconius numata arcuella
+Spodoptera frugiperda
+Heliconius melpomene rosina
+Heliconius cydno alithea
+Anopheles stephensi
+Drosophila pseudoobscura
+Drosophila simulans
+Bombyx mori
+Drosophila melanogaster
+Apis mellifera intermissa
+Anopheles gambiae
+Drosophila melanogaster
+Drosophila simulans
+Heliconius melpomene melpomene
+Heliconius cydno cydnides
+Heliconius numata bicoloratus
+Heliconius timareta
+Heliconius hecale
+Heliconius ethilla aerotome
+Heliconius elevatus bari
+Heliconius pardalinus
+Heliconius pardalinus ssp. n. KMK-2015
+Heliconius elevatus
+Heliconius hecale felix
+Heliconius timareta ssp. JD-2011
+Heliconius cydno weymeri
+Heliconius melpomene melpomene
+Drosophila simulans
+Drosophila melanogaster
+Drosophila melanogaster
+Drosophila simulans
+Heliconius melpomene melpomene
+Heliconius cydno weymeri
+Heliconius timareta timareta
+Heliconius elevatus
+Heliconius pardalinus ssp. n. KMK-2015
+Heliconius pardalinus ssp. n. KMK-2015
+Heliconius elevatus
+Heliconius timareta timareta
+Heliconius cydno zelinde
+Heliconius melpomene aglaope
+Drosophila simulans
+Drosophila melanogaster
+Drosophila melanogaster
+Drosophila simulans
+Heliconius melpomene rosina
+Heliconius cydno cordula
+Heliconius timareta
+Heliconius elevatus
+Heliconius pardalinus sergestus
+Heliconius pardalinus ssp. JD-2011
+Heliconius timareta
+Heliconius cydno cordula
+Heliconius melpomene amaryllis
+Drosophila simulans
+Drosophila melanogaster
+Drosophila melanogaster
+Drosophila simulans
+Heliconius melpomene aglaope
+Heliconius cydno cordula
+Heliconius timareta ssp. NG-2008
+Heliconius timareta ssp. JD-2011
+Heliconius cydno cordula
+Heliconius melpomene melpomene
+Drosophila melanogaster
+Drosophila melanogaster
+Heliconius melpomene melpomene
+Heliconius cydno hermogenes
+Heliconius timareta ssp. NG-2008
+Heliconius timareta ssp. NG-2008
+Heliconius cydno chioneus
+Heliconius melpomene rosina
+Drosophila melanogaster
+Drosophila melanogaster
+Heliconius melpomene aglaope
+Heliconius cydno chioneus
+Heliconius timareta
+Heliconius timareta timareta
+Heliconius cydno chioneus
+Heliconius melpomene amaryllis
+Drosophila melanogaster
+Drosophila melanogaster
+Heliconius melpomene melpomene
+Heliconius cydno cordula
+Heliconius timareta ssp. JD-2011
+Heliconius timareta
+Heliconius cydno cydnides
+Heliconius melpomene amaryllis
+Drosophila melanogaster
+Drosophila melanogaster
+Heliconius melpomene rosina
+Heliconius timareta
+Heliconius timareta
+Heliconius melpomene amandus
+Drosophila melanogaster
+Drosophila melanogaster
+Heliconius melpomene amandus
+Heliconius timareta timareta
+Heliconius timareta timareta
+Heliconius melpomene amaryllis
+Drosophila melanogaster
+Heliconius melpomene cythera
+Heliconius timareta timareta
+Heliconius melpomene cythera
+Heliconius melpomene bellula
+Heliconius melpomene bellula
+Heliconius melpomene ecuadorensis
+Heliconius melpomene ecuadorensis
+Heliconius melpomene malleti x Heliconius melpomene plesseni
+Heliconius melpomene malleti
+Heliconius melpomene melpomene
+Heliconius melpomene melpomene
+Heliconius melpomene melpomene
+Heliconius melpomene meriana
+Heliconius melpomene meriana
+Heliconius melpomene plesseni
+Heliconius melpomene plesseni
+Heliconius melpomene rosina
+Heliconius melpomene thelxiopeia
+Heliconius melpomene vulcanus
+Heliconius melpomene vulcanus
+Heliconius melpomene melpomene
+Heliconius melpomene amaryllis
+Heliconius melpomene aglaope
+Heliconius melpomene aglaope
+Heliconius melpomene amaryllis
+Heliconius melpomene aglaope
+Heliconius melpomene amaryllis
+Heliconius melpomene aglaope
+Heliconius melpomene amaryllis

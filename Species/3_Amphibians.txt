@@ -1,0 +1,6 @@
+Ambystoma mexicanum
+Xenopus tropicalis
+Xenopus laevis
+Rhinella marina
+Rana catesbeiana
+Nanorana parkeri
