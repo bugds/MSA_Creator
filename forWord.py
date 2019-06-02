@@ -1,16 +1,15 @@
-inFile = open('in.fasta', 'r')
-outFile = open('out.fasta', 'w')
+inFile = open('StandOut.fasta', 'r')
+outFile = open('fW.txt', 'w')
 
 fastaDict = dict()
 line = inFile.readline()
 
 while line:
     if line[0] == '>':
-        spec = line.split('[')[1][:-2].replace(' ', '_')
-        spec += '_(' + line.split(' ')[0][1:] + ')'
-        while len(spec) < 50:
-            spec += ' '
-        fastaDict[spec] = ''
+        species = line[:-1]
+        while len(species) < 60:
+            species += ' '
+        fastaDict[species] = ''
         line = inFile.readline()
     if line[0] != '>':
         bigLine = ''
@@ -20,24 +19,15 @@ while line:
             else:
                 break
             line = inFile.readline()
-        fastaDict[spec] = bigLine
+        fastaDict[species] = bigLine
 
-for key, value in fastaDict.items():
-    outFile.write(key + value[:len(value)//2] + '\n')
-outFile.write('\n')
-for key, value in fastaDict.items():
-    outFile.write(key + value[len(value)//2:] + '\n')
+division = 6
 
-'''
-for key, value in fastaDict.items():
-    outFile.write(key + value[:len(value)//3] + '\n')
-outFile.write('\n')
-for key, value in fastaDict.items():
-    outFile.write(key + value[len(value)//3:2*len(value)//3] + '\n')
-outFile.write('\n')
-for key, value in fastaDict.items():
-    outFile.write(key + value[2*len(value)//3:] + '\n')
-'''
+for i in range(division):
+    for key, value in fastaDict.items():
+        outFile.write(key + value[i*len(value)//division:\
+                                  (i+1)*len(value)//division] + '\n')
+    outFile.write('\n***PAGE BREAK HERE***\n')
 
 inFile.close()
 outFile.close()
