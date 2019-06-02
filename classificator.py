@@ -9,6 +9,13 @@ class BlastResult:
 		self.fasta = f
 		self.Evalue = e
 
+#class BlastResultDataSet(dict):
+#       def __init__:
+#               self.addSpecies
+#               self.addProteins
+#       def addSpecies(pathToBlastResults) - get species
+#       def addProteins(pathToBlastResults) - get AN and fasta
+
 def main():
 	global data
 	if len(sys.argv) == 1:
@@ -21,12 +28,14 @@ def main():
 				firstLine = file.readline()
 			file.close()
 			if firstLine[0] == '>':
-				print("Processing " + fileName + " and " +\
-					fileName.split('.')[0] + ".csv")
+				print("Processing " + fileName + " and " \
+						+ fileName.split('.')[0] \
+						+ ".csv")
 				parser(fileName)
-				#if 'y' in input("Is " + fileName +\
-				#" - the reference? "):
-				#	reference = fileName.split('.')[0]
+				if 'y' in input("Is " + fileName \
+						+ " - the reference? " \
+						+ "(y/not y) "):
+					reference = fileName.split('.')[0]
 		dictToFilter = data[reference]
 		for p in data.keys():
 			if p != reference:
@@ -55,7 +64,7 @@ def parser(fileName):
 		if AN == csvLine.split(',')[1]:
 			species = fastaLine.split('[')[1][:-2]\
 					   .replace(' ', '_')
-			Evalue = csvLine.split(',')[-3]
+			Evalue = float(csvLine.split(',')[-3])
 			fasta = ''
 			fastaLine = fastaFile.readline()
 			while fastaLine and fastaLine[0] != '>':
@@ -75,26 +84,33 @@ def parser(fileName):
 
 def comparator(dictToFilter, dictFilter):
 	for species in list(dictToFilter):
-                try:
-                        minDictToFilter = min([float(item[1].Evalue) for item\
-					in dictToFilter[species].items()])
-                        minDictFilter = min([float(item[1].Evalue) for item\
-					in dictFilter[species].items()])
-                        if minDictToFilter > minDictFilter:
-                                dictToFilter.pop(species)
-                except KeyError:
-                        print('y')
-                        pass
+		try:
+			for AN in list(dictToFilter[species]):
+				try:
+					referenceE = \
+					dictToFilter[species][AN].Evalue
+					testingE = \
+					dictFilter[species][AN].Evalue
+					if referenceE > testingE:
+						dictToFilter[species].pop(AN)
+				except KeyError:
+					pass
+		except KeyError:
+			pass
 	return dictToFilter
 
-for key, item in main().items():
-        minimum = 10
-        AN = ''
-        fasta = ''
-        for i in item.items():
-                if minimum > float(i[1].Evalue):
-                        minimum = float(i[1].Evalue)
-                        AN = i[0]
-                        fasta = i[1].fasta
-        print('>' + key + ':_(' + AN + ')')
-        print(fasta)
+result = main()
+
+output = open('out.fasta', 'w')
+
+maximum = float(1e-10)
+for key, value in result.items():
+	AN = ''
+	fasta = ''
+	for k,v in value.items():
+		if maximum > v.Evalue:
+			AN = k
+			fasta = v.fasta
+			output.write('>' + AN + ':' + key + '\n')
+			output.write(fasta)
+output.close()
