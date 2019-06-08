@@ -1,20 +1,40 @@
 import os
 import sys
 
-data = {}
-reference = 'MeCP2_1'
-
 class BlastResult:
 	def __init__(self, f, e):
 		self.fasta = f
 		self.Evalue = e
 
-#class BlastResultDataSet(dict):
-#       def __init__:
-#               self.addSpecies
-#               self.addProteins
-#       def addSpecies(pathToBlastResults) - get species
-#       def addProteins(pathToBlastResults) - get AN and fasta
+class BlastResultDataSet(dict):
+	def __getitem__(self, item):
+		try:
+			return dict.__getitem__(self, item)
+		except KeyError:
+			value = self[item] = type(self)()
+			return value
+
+	#def addProteins(path):
+
+	#def addProteins(path):
+		
+
+data = BlastResultDataSet()
+
+def filesCheck(path):
+	fastaList = []
+	for fileName in os.listdir(path):
+		with open(os.path.join(path, fileName)) as file:
+			firstLine = file.readline()
+		file.close()
+		csv = fileName.split('.')[0] + ".csv"
+		if (firstLine[0] == '>') and \
+		(csv in os.listdir(path)):
+			print("Processing " + fileName\
+				+ " and " \
+				+ csv)
+			fastaList.append(fileName)
+	return fastaList
 
 def main():
 	global data
@@ -23,30 +43,21 @@ def main():
 			      "(fasta and csv) as an argument.")
 		print("Restart manually")
 	else:
-		for fileName in os.listdir(sys.argv[1]):
-			with open(os.path.join(sys.argv[1], fileName)) as file:
-				firstLine = file.readline()
-			file.close()
-			if firstLine[0] == '>':
-				print("Processing " + fileName + " and " \
-						+ fileName.split('.')[0] \
-						+ ".csv")
-				parser(fileName)
-				if 'y' in input("Is " + fileName \
-						+ " - the reference? " \
-						+ "(y/not y) "):
-					reference = fileName.split('.')[0]
+		fastaList = filesCheck(sys.argv[1])
+		for fileName in fastaList:
+			parser(fileName)
+			if 'y' in input("Is " + fileName \
+					+ " - the reference? " \
+					+ "(y/not y) "):
+				reference = fileName.split('.')[0]
 		dictToFilter = data[reference]
-		for p in data.keys():
-			if p != reference:
-				dictToFilter = comparator(dictToFilter,\
-					data[p])
+		for p in data.pop(reference).keys():
+			dictToFilter = comparator(dictToFilter, data[p])
 		return dictToFilter
 
 def parser(fileName):
 	global data
 	protein = fileName.split('.')[0]
-	data[protein] = {}
 	fastaFile = open(os.path.join(sys.argv[1], fileName), 'r')
 	csvFile = open(os.path.join(sys.argv[1], fileName)\
 		       .replace('.txt', '.csv'), 'r')
@@ -70,12 +81,8 @@ def parser(fileName):
 			while fastaLine and fastaLine[0] != '>':
 				fasta += fastaLine
 				fastaLine = fastaFile.readline()
-			try:
 				data[protein][species][AN]=BlastResult(\
 				fasta, Evalue)
-			except KeyError:
-				data[protein][species] = {AN:BlastResult(\
-				fasta, Evalue)}
 		else:
 			print(fastaLine + '\n' + csvLine)
 			raise ValueError("Fasta and csv files do not match!")
@@ -86,15 +93,13 @@ def comparator(dictToFilter, dictFilter):
 	for species in list(dictToFilter):
 		try:
 			for AN in list(dictToFilter[species]):
-				try:
+				if AN in dictFilter[species].keys():
 					referenceE = \
 					dictToFilter[species][AN].Evalue
 					testingE = \
 					dictFilter[species][AN].Evalue
 					if referenceE > testingE:
 						dictToFilter[species].pop(AN)
-				except KeyError:
-					pass
 		except KeyError:
 			pass
 	return dictToFilter
