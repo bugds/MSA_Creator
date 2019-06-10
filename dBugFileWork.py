@@ -7,7 +7,6 @@ def argumentCheck(numberOfArguments):
                   "(fasta and csv) as an argument.")
         print("Restart manually")
         raise Exception("Wrong arguments")
-    return True
 
 def filesCheck(path, twoFiles = 1):
     fastaList = []

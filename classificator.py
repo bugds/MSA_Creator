@@ -8,7 +8,7 @@ class BlastResult:
     .fasta is for aminoacid sequence
     .Evalue is for E-value
     '''
-    def __init__(self, f, e):
+    def __init__(self, f='', e=''):
         self.fasta = f
         self.Evalue = e
 
@@ -17,74 +17,65 @@ class BlastResultDataSet(dict):
 
     A dictionary without the KeyError exception
     '''
-    def __getitem__(self, item):
-        try:
-            return dict.__getitem__(self, item)
-        except KeyError:
-            value = self[item] = type(self)()
-            return value
+    def __init__(self, fastaList):
+        for fastaFile in fastaList:
+            self[fastaFile.split('.')[0]] = {}
 
-    def fillingIn(path):
+    def fillingIn(self, resultPath):
         '''Filling in the whole dataset
         '''
-        
+        protein = os.path.split(resultPath)[-1].split('.')[0]
+        fastaFile = open(resultPath, 'r')
+        csvFile = open(os.path.splitext(resultPath)[0] + '.csv', 'r')
+        fastaLine = fastaFile.readline()
+        csvLine = csvFile.readline()
+        while fastaLine:
+            AN = fastaLine.split(' ')[0][1:]
+            species = fastaLine.split('[')[1][:-2].replace(' ', '_')
+            if AN == csvLine.split(',')[1]:
+                self.addSpecies(protein, species, AN, fastaLine)
+                self.addEvalue(protein, species, AN, csvLine)
+                fastaBlock = ''
+                fastaLine = fastaFile.readline()
+                while fastaLine and (not '>' in fastaLine):
+                    fastaBlock += fastaLine
+                    fastaLine = fastaFile.readline()
+                self.addFasta(protein, species, AN, fastaBlock)
+            else:
+                csvLine = csvFile.readline()
+        fastaFile.close()
+        csvFile.close()
 
-    def addFasta(path):
+    def addSpecies(self, protein, species, AN, fastaLine):
+        '''Add species information, create BlastResult object
+        '''
+        if not (species in self[protein]):
+            self[protein][species] = {}
+        self[protein][species][AN] = BlastResult()
+
+    def addFasta(self, protein, species, AN, fastaBlock):
         '''Add fasta sequence for 1 result
         '''
-        
+        self[protein][species][AN].fasta = fastaBlock
 
-    def addEvalue(path):
+    def addEvalue(self, protein, species, AN, csvLine):
         '''Add E-value for 1 result
         '''
-        
-
-data = BlastResultDataSet()
+        self[protein][species][AN].Evalue = float(csvLine.split(',')[-3])
 
 def main():
-    global data
-    if argumentCheck(2):
-        for fileName in filesCheck(sys.argv[1]):
-            parser(fileName)
-            if 'y' in input("Is " + fileName \
-                    + " - the reference? " \
-                    + "(y/not y) "):
-                reference = fileName.split('.')[0]
-        dictToFilter = data[reference]
-        for p in data.pop(reference).keys():
-            dictToFilter = comparator(dictToFilter, data[p])
-        return dictToFilter
-
-def parser(fileName):
-    global data
-    protein = fileName.split('.')[0]
-    fastaFile = open(os.path.join(sys.argv[1], fileName), 'r')
-    csvFile = open(os.path.join(sys.argv[1], fileName)\
-               .replace('.*', '.csv'), 'r')
-    fastaLine = fastaFile.readline()
-    csvLine = ','
-    while fastaLine:
-        AN = fastaLine.split(' ')[0][1:]
-        nextCsvLine = csvFile.readline()
-        if nextCsvLine.split(',')[1] == csvLine.split(',')[1]:
-            while nextCsvLine.split(',')[1] == csvLine.split(',')[1]:
-                csvLine = csvFile.readline()
-        else:
-            csvLine = nextCsvLine
-        if AN == csvLine.split(',')[1]:
-            species = fastaLine.split('[')[1][:-2].replace(' ', '_')
-            Evalue = float(csvLine.split(',')[-3])
-            fasta = ''
-            fastaLine = fastaFile.readline()
-            while fastaLine and fastaLine[0] != '>':
-                fasta += fastaLine
-                fastaLine = fastaFile.readline()
-                data[protein][species][AN]=BlastResult(fasta, Evalue)
-        else:
-            print(fastaLine + '\n' + csvLine)
-            raise ValueError("Fasta and csv files do not match!")
-    fastaFile.close()
-    csvFile.close()
+    argumentCheck(2)
+    fastaList = filesCheck(sys.argv[1])
+    data = BlastResultDataSet(fastaList)
+    for fastaFile in fastaList:
+        data.fillingIn(os.path.join(sys.argv[1], fastaFile))
+        if 'y' in input("Is " + fastaFile + " - the reference (y/not y) "):
+                reference = fastaFile.split('.')[0]
+    dictToFilter = data[reference]
+    data.pop(reference)
+    for p in data.keys():
+        dictToFilter = comparator(dictToFilter, data[p])
+    return dictToFilter
 
 def comparator(dictToFilter, dictFilter):
     for species in list(dictToFilter):
