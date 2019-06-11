@@ -8,9 +8,10 @@ class BlastResult:
     .fasta is for aminoacid sequence
     .Evalue is for E-value
     '''
-    def __init__(self, f='', e=''):
+    def __init__(self, f='', e='', c=float(0)):
         self.fasta = f
         self.Evalue = e
+        self.queryCover = c
 
 class BlastResultDataSet(dict):
     '''Object for storing all paralogs BLAST results
@@ -29,12 +30,15 @@ class BlastResultDataSet(dict):
         csvFile = open(os.path.splitext(resultPath)[0] + '.csv', 'r')
         fastaLine = fastaFile.readline()
         csvLine = csvFile.readline()
+        queryLength = float(csvLine.split(',')[3])
         while fastaLine:
             AN = fastaLine.split(' ')[0][1:]
             species = fastaLine.split('[')[1][:-2].replace(' ', '_')
             if AN == csvLine.split(',')[1]:
                 self.addSpecies(protein, species, AN, fastaLine)
                 self.addEvalue(protein, species, AN, csvLine)
+                self.addQueryCover(protein, species, AN, \
+                                    csvLine, queryLength)
                 fastaBlock = ''
                 fastaLine = fastaFile.readline()
                 while fastaLine and (not '>' in fastaLine):
@@ -62,6 +66,12 @@ class BlastResultDataSet(dict):
         '''Add E-value for 1 result
         '''
         self[protein][species][AN].Evalue = float(csvLine.split(',')[-3])
+
+    def addQueryCover(self, protein, species, AN, csvLine, queryLength):
+        '''Add query cover for 1 result
+        '''
+        self[protein][species][AN].queryCover = \
+            float(float(csvLine.split(',')[3]) / queryLength)
 
 def main():
     argumentCheck(2)
@@ -94,12 +104,13 @@ result = main()
 
 output = open('out.fasta', 'w')
 
-maximum = float(1e-10)
+maximumEvalue = float(1e-10)
+minimumQC = float(1/4)
 for key, value in result.items():
     AN = ''
     fasta = ''
     for k,v in value.items():
-        if maximum > v.Evalue:
+        if (maximumEvalue > v.Evalue) and (minimumQC < v.queryCover):
             AN = k
             fasta = v.fasta
             output.write('>' + AN + ':' + key + '\n')
