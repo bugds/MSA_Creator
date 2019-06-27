@@ -1,116 +1,118 @@
 import os
 import sys
-
-data = {}
-reference = 'MeCP2_1'
+from dBugFileWork import argumentCheck, filesCheck
 
 class BlastResult:
-	def __init__(self, f, e):
-		self.fasta = f
-		self.Evalue = e
+    '''Object for storing properties of a single BLAST result
 
-#class BlastResultDataSet(dict):
-#       def __init__:
-#               self.addSpecies
-#               self.addProteins
-#       def addSpecies(pathToBlastResults) - get species
-#       def addProteins(pathToBlastResults) - get AN and fasta
+    .fasta is for aminoacid sequence
+    .Evalue is for E-value
+    '''
+    def __init__(self, f='', e='', c=float(0)):
+        self.fasta = f
+        self.Evalue = e
+        self.queryCover = c
+
+class BlastResultDataSet(dict):
+    '''Object for storing all paralogs BLAST results
+
+    A dictionary without the KeyError exception
+    '''
+    def __init__(self, fastaList):
+        for fastaFile in fastaList:
+            self[fastaFile.split('.')[0]] = {}
+
+    def fillingIn(self, resultPath):
+        '''Filling in the whole dataset
+        '''
+        protein = os.path.split(resultPath)[-1].split('.')[0]
+        fastaFile = open(resultPath, 'r')
+        csvFile = open(os.path.splitext(resultPath)[0] + '.csv', 'r')
+        fastaLine = fastaFile.readline()
+        csvLine = csvFile.readline()
+        queryLength = float(csvLine.split(',')[3])
+        while fastaLine:
+            AN = fastaLine.split(' ')[0][1:]
+            species = fastaLine.split('[')[1][:-2].replace(' ', '_')
+            if AN == csvLine.split(',')[1]:
+                self.addSpecies(protein, species, AN, fastaLine)
+                self.addEvalue(protein, species, AN, csvLine)
+                self.addQueryCover(protein, species, AN, \
+                                    csvLine, queryLength)
+                fastaBlock = ''
+                fastaLine = fastaFile.readline()
+                while fastaLine and (not '>' in fastaLine):
+                    fastaBlock += fastaLine
+                    fastaLine = fastaFile.readline()
+                self.addFasta(protein, species, AN, fastaBlock)
+            else:
+                csvLine = csvFile.readline()
+        fastaFile.close()
+        csvFile.close()
+
+    def addSpecies(self, protein, species, AN, fastaLine):
+        '''Add species information, create BlastResult object
+        '''
+        if not (species in self[protein]):
+            self[protein][species] = {}
+        self[protein][species][AN] = BlastResult()
+
+    def addFasta(self, protein, species, AN, fastaBlock):
+        '''Add fasta sequence for 1 result
+        '''
+        self[protein][species][AN].fasta = fastaBlock
+
+    def addEvalue(self, protein, species, AN, csvLine):
+        '''Add E-value for 1 result
+        '''
+        self[protein][species][AN].Evalue = float(csvLine.split(',')[-3])
+
+    def addQueryCover(self, protein, species, AN, csvLine, queryLength):
+        '''Add query cover for 1 result
+        '''
+        self[protein][species][AN].queryCover = \
+            float(float(csvLine.split(',')[3]) / queryLength)
 
 def main():
-	global data
-	if len(sys.argv) == 1:
-		print("Please, write the directory with BLAST results " + \
-			      "(fasta and csv) as an argument.")
-		print("Restart manually")
-	else:
-		for fileName in os.listdir(sys.argv[1]):
-			with open(os.path.join(sys.argv[1], fileName)) as file:
-				firstLine = file.readline()
-			file.close()
-			if firstLine[0] == '>':
-				print("Processing " + fileName + " and " \
-						+ fileName.split('.')[0] \
-						+ ".csv")
-				parser(fileName)
-				if 'y' in input("Is " + fileName \
-						+ " - the reference? " \
-						+ "(y/not y) "):
-					reference = fileName.split('.')[0]
-		dictToFilter = data[reference]
-		for p in data.keys():
-			if p != reference:
-				dictToFilter = comparator(dictToFilter,\
-					data[p])
-		return dictToFilter
-
-def parser(fileName):
-	global data
-	protein = fileName.split('.')[0]
-	data[protein] = {}
-	fastaFile = open(os.path.join(sys.argv[1], fileName), 'r')
-	csvFile = open(os.path.join(sys.argv[1], fileName)\
-		       .replace('.txt', '.csv'), 'r')
-	fastaLine = fastaFile.readline()
-	csvLine = ','
-	while fastaLine:
-		AN = fastaLine.split(' ')[0][1:]
-		nextCsvLine = csvFile.readline()
-		if nextCsvLine.split(',')[1] == csvLine.split(',')[1]:
-			while nextCsvLine.split(',')[1] ==\
-			csvLine.split(',')[1]:
-				csvLine = csvFile.readline()
-		else:
-			csvLine = nextCsvLine
-		if AN == csvLine.split(',')[1]:
-			species = fastaLine.split('[')[1][:-2]\
-					   .replace(' ', '_')
-			Evalue = float(csvLine.split(',')[-3])
-			fasta = ''
-			fastaLine = fastaFile.readline()
-			while fastaLine and fastaLine[0] != '>':
-				fasta += fastaLine
-				fastaLine = fastaFile.readline()
-			try:
-				data[protein][species][AN]=BlastResult(\
-				fasta, Evalue)
-			except KeyError:
-				data[protein][species] = {AN:BlastResult(\
-				fasta, Evalue)}
-		else:
-			print(fastaLine + '\n' + csvLine)
-			raise ValueError("Fasta and csv files do not match!")
-	fastaFile.close()
-	csvFile.close()
+    argumentCheck(2)
+    fastaList = filesCheck(sys.argv[1])
+    data = BlastResultDataSet(fastaList)
+    for fastaFile in fastaList:
+        data.fillingIn(os.path.join(sys.argv[1], fastaFile))
+        if 'y' in input("Is " + fastaFile + " - the reference (y/not y) "):
+                reference = fastaFile.split('.')[0]
+    dictToFilter = data[reference]
+    data.pop(reference)
+    for p in data.keys():
+        dictToFilter = comparator(dictToFilter, data[p])
+    return dictToFilter
 
 def comparator(dictToFilter, dictFilter):
-	for species in list(dictToFilter):
-		try:
-			for AN in list(dictToFilter[species]):
-				try:
-					referenceE = \
-					dictToFilter[species][AN].Evalue
-					testingE = \
-					dictFilter[species][AN].Evalue
-					if referenceE > testingE:
-						dictToFilter[species].pop(AN)
-				except KeyError:
-					pass
-		except KeyError:
-			pass
-	return dictToFilter
+    for species in list(dictToFilter):
+        try:
+            for AN in list(dictToFilter[species]):
+                if AN in dictFilter[species].keys():
+                    referenceE = dictToFilter[species][AN].Evalue
+                    testingE = dictFilter[species][AN].Evalue
+                    if referenceE > testingE:
+                        dictToFilter[species].pop(AN)
+        except KeyError:
+            pass
+    return dictToFilter
 
 result = main()
 
 output = open('out.fasta', 'w')
 
-maximum = float(1e-10)
+maximumEvalue = float(1e-10)
+minimumQC = float(1/4)
 for key, value in result.items():
-	AN = ''
-	fasta = ''
-	for k,v in value.items():
-		if maximum > v.Evalue:
-			AN = k
-			fasta = v.fasta
-			output.write('>' + AN + ':' + key + '\n')
-			output.write(fasta)
+    AN = ''
+    fasta = ''
+    for k,v in value.items():
+        if (maximumEvalue > v.Evalue) and (minimumQC < v.queryCover):
+            AN = k
+            fasta = v.fasta
+            output.write('>' + AN + ':' + key + '\n')
+            output.write(fasta)
 output.close()
