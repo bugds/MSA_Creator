@@ -35,7 +35,7 @@ def fastaGenerator(speciesList, speciesDict):
 
 def main():
     speciesList = []
-    for fileName in os.listdir('Species'):
+    for fileName in sorted(os.listdir('Species')):
         speciesList.extend(fileParser('Species/' + fileName))
     fastaGenerator(speciesList, fastaParser('MSA.txt'))
     
