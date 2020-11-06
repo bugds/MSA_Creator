@@ -27,10 +27,13 @@ def fastaParser(path):
 
 def fastaGenerator(speciesList, speciesDict):
     file = open('StandOut.fasta', 'w')
+    got = set()
     for species in speciesList:
         for protein in speciesDict.keys():
             if species in protein:
                 file.write('>' + protein + '\n' + speciesDict[protein])
+                got.add(protein)
+    print(set(speciesDict.keys()) - got)
     file.close()
 
 def main():
